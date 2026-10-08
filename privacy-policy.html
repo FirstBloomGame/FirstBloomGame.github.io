@@ -5,93 +5,115 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>First Bloom Privacy Policy</title>
 <meta name="description" content="Privacy policy for First Bloom, an idle evolution game for Android.">
+<meta name="theme-color" content="#0b1a33">
+<meta name="color-scheme" content="dark">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <style>
+  /* Fredoka is stored on this site (no third-party font service). License: fonts/OFL.txt */
+  @font-face {
+    font-family: "Fredoka";
+    src: url("fonts/Fredoka.woff2") format("woff2");
+    font-weight: 300 700;
+    font-display: swap;
+  }
   :root {
-    --bg: #f7f5ef;
-    --card: #ffffff;
-    --text: #1d2140;
-    --soft: #545a80;
-    --line: #e2dfd4;
-    --accent: #b97a00;
-    --link: #3446b8;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) {
-      --bg: #12142b;
-      --card: #1c1f3f;
-      --text: #eef0ff;
-      --soft: #aab0d8;
-      --line: #2e3260;
-      --accent: #ffc53d;
-      --link: #9fb0ff;
-    }
-  }
-  :root[data-theme="dark"] {
-    --bg: #12142b;
-    --card: #1c1f3f;
-    --text: #eef0ff;
-    --soft: #aab0d8;
-    --line: #2e3260;
-    --accent: #ffc53d;
-    --link: #9fb0ff;
+    --deep: #0b1a33;
+    --text: #ffffff;
+    --body: rgba(255, 255, 255, 0.86);
+    --soft: rgba(255, 255, 255, 0.64);
+    --line: rgba(255, 255, 255, 0.12);
+    --tray: rgba(3, 6, 22, 0.34);
+    --gold: #ffc23d;
+    --cyan: #7fe3ff;
   }
   * { box-sizing: border-box; }
+  html { background: var(--deep); }
   body {
     margin: 0;
-    background: var(--bg);
-    color: var(--text);
-    font: 17px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    color: var(--body);
+    font: 17px/1.65 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    background:
+      radial-gradient(ellipse 110% 520px at 50% 0%, #1d6f8f 0%, #123a5e 45%, transparent 100%),
+      var(--deep);
+    background-repeat: no-repeat;
   }
   main {
     max-width: 720px;
     margin: 0 auto;
-    padding: 40px 16px 64px;
+    padding: 28px 16px 64px;
   }
-  h1 { font-size: 2rem; line-height: 1.2; margin: 0 0 4px; }
+  .home {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--text);
+    text-decoration: none;
+    font-family: "Fredoka", system-ui, sans-serif;
+    font-weight: 600;
+    font-size: 1.15rem;
+  }
+  .home img { width: 40px; height: 40px; border-radius: 11px; box-shadow: 0 4px 12px rgba(0, 0, 10, 0.4); }
+  h1, h2 {
+    font-family: "Fredoka", system-ui, sans-serif;
+    color: var(--text);
+    text-shadow: 0 2px 0 rgba(0, 0, 20, 0.3);
+  }
+  h1 { font-size: clamp(2rem, 8vw, 2.7rem); line-height: 1.1; font-weight: 700; margin: 36px 0 6px; }
+  h2 { font-size: 1.35rem; font-weight: 600; line-height: 1.25; margin: 40px 0 8px; }
   .date { color: var(--soft); margin: 0 0 28px; }
-  .summary {
-    background: var(--card);
-    border: 1px solid var(--line);
-    border-left: 4px solid var(--accent);
-    border-radius: 12px;
-    padding: 16px 20px;
-    margin-bottom: 32px;
+  .tray {
+    background: var(--tray);
+    border-radius: 22px;
+    padding: 18px 22px;
+    margin-bottom: 8px;
   }
-  .summary p { margin: 0 0 8px; }
-  .summary ul { margin: 0; padding-left: 20px; }
-  h2 { font-size: 1.25rem; margin: 36px 0 8px; }
-  p, li { color: var(--text); }
-  li { margin-bottom: 6px; }
-  a { color: var(--link); overflow-wrap: anywhere; }
-  table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 0.95rem; }
-  th, td { text-align: left; vertical-align: top; padding: 10px 8px; border-bottom: 1px solid var(--line); }
+  .tray h2 { margin: 0 0 8px; font-size: 1.2rem; color: var(--gold); }
+  .tray ul { margin: 0; padding-left: 20px; }
+  p { margin: 0 0 14px; }
+  li { margin-bottom: 8px; }
+  li::marker { color: var(--cyan); }
+  strong { color: var(--text); font-weight: 600; }
+  a { color: var(--cyan); overflow-wrap: anywhere; text-underline-offset: 2px; }
+  a:hover, a:focus-visible { color: var(--text); }
+  table { width: 100%; border-collapse: collapse; margin: 14px 0 18px; font-size: 0.95rem; }
+  th, td { text-align: left; vertical-align: top; padding: 11px 10px; border-bottom: 1px solid var(--line); }
   th { color: var(--soft); font-weight: 600; }
-  @media (max-width: 520px) {
+  td:first-child { color: var(--text); font-weight: 600; }
+  @media (max-width: 560px) {
     table, thead, tbody, tr, th, td { display: block; }
     thead { display: none; }
-    tr { border-bottom: 1px solid var(--line); padding: 8px 0; }
-    td { border: 0; padding: 2px 0; }
-    td:first-child { font-weight: 600; }
+    tr { padding: 10px 0; border-bottom: 1px solid var(--line); }
+    td { border: 0; padding: 1px 0; }
+  }
+  footer {
+    margin-top: 48px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+    color: var(--soft);
+    font-size: 0.95rem;
   }
 </style>
 </head>
 <body>
 <main>
-  <h1>First Bloom Privacy Policy</h1>
+  <a class="home" href="./"><img src="icon.jpg" width="40" height="40" alt="">First Bloom</a>
+
+  <h1>Privacy Policy</h1>
   <p class="date">Last updated: October 8, 2026</p>
 
-  <div class="summary">
-    <p><strong>The short version</strong></p>
+  <section class="tray">
+    <h2>The short version</h2>
     <ul>
       <li>First Bloom has no accounts and never asks for your name, email or contacts.</li>
       <li>Your game progress is saved only on your device. We never receive it.</li>
       <li>The game shows optional ads from Google AdMob, but only if you tap "Watch an ad". Google collects some device data to show and measure those ads, as explained below.</li>
       <li>If you're in the EU, UK or Switzerland, you're asked for consent first, and you can change your choice any time in Settings.</li>
     </ul>
-  </div>
+  </section>
 
   <h2>Who we are</h2>
-  <p>First Bloom is an idle evolution game made by an independent developer ("we", "us"). If you have any questions about this policy or your privacy, email us at <a href="mailto:firstbloomgame@outlook.com">firstbloomgame@outlook.com</a>.</p>
+  <p>First Bloom is an idle evolution game made by an independent developer ("we", "us"). This policy covers the First Bloom app and this website. If you have any questions about this policy or your privacy, email us at <a href="mailto:firstbloomgame@outlook.com">firstbloomgame@outlook.com</a>.</p>
 
   <h2>What the game stores on your device</h2>
   <p>To remember your progress, First Bloom saves a small file on your device. It contains your game progress, your sound and music settings, and simple statistics about how you play, such as how many times you've tapped. This file never leaves your device and is not sent to us or anyone else. You can delete it at any time with Settings → Reset progress, or by uninstalling the game.</p>
@@ -108,12 +130,12 @@
       <tr><td>Diagnostics</td><td>Technical data such as crash logs and performance</td><td>Keeping ads working properly</td></tr>
     </tbody>
   </table>
-  <p>This data is sent securely (encrypted) to Google. We do not receive it, and we can't see who you are. Google's use of this data is covered by Google's own policies:</p>
+  <p>This data is sent securely (encrypted) to Google. We do not receive it, and we can't see who you are. Google may process it in countries other than yours, including the United States, under its own safeguards. Google's use of this data is covered by Google's own policies:</p>
   <ul>
     <li><a href="https://policies.google.com/privacy">Google Privacy Policy</a></li>
     <li><a href="https://policies.google.com/technologies/partner-sites">How Google uses information from sites or apps that use its services</a></li>
   </ul>
-  <p>Ads in First Bloom are limited to content suitable for teens.</p>
+  <p>We do not sell your personal information, and we do not receive any of it to sell. Ads in First Bloom are limited to content suitable for teens.</p>
 
   <h2>Your choices</h2>
   <ul>
@@ -135,11 +157,19 @@
   <h2>Data retention</h2>
   <p>Your save file stays on your device until you reset your progress or uninstall the game. Google keeps ad data according to its own retention policies.</p>
 
+  <h2>This website</h2>
+  <p>This website has no cookies, no analytics and no ads, and it doesn't load anything from other companies (even the font is stored here). It is hosted by GitHub Pages, which may record visitors' IP addresses to keep the service secure. See the <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub Privacy Statement</a>.</p>
+
+  <h2>Do Not Track</h2>
+  <p>Some browsers can send a "Do Not Track" signal. We don't respond to it differently, because it's a browser setting and doesn't reach the app. We don't track you ourselves. Google's ad software in the game may use your advertising ID as described above, and you control that with the choices listed under "Your choices".</p>
+
   <h2>Changes to this policy</h2>
   <p>If we change this policy, we'll update this page and the "Last updated" date above. If a change is significant, for example if the game starts collecting new kinds of data, we'll also mention it in the game's update notes.</p>
 
   <h2>Contact</h2>
   <p>Questions or requests: <a href="mailto:firstbloomgame@outlook.com">firstbloomgame@outlook.com</a>.</p>
+
+  <footer><a href="./">Back to First Bloom</a></footer>
 </main>
 </body>
 </html>
